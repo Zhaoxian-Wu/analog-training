@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# Data & Models
+data/
+*.h5
+*.pth
+*.pt
+checkpoints/
+saved_models/
+pretrained/
+
+# Logs & Cache
+logs/
+*.log
+.cache
+.pytest_cache/
+.coverage
+htmlcov/
+tensorboard/
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
