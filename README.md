@@ -20,6 +20,11 @@ pip install -r requirements.txt
 ```
 
 # Running
+In the bash following commands, replace the `${CUDA_IDX}` variable with specific GPU index, e.g.
+```bash
+CUDA_IDX=0
+```
+
 ## Simulation 1
 **Figure 1.** Simulation 1 compares digital / analog SGD under different learnable rate 
 ```bash
@@ -74,17 +79,17 @@ python S4.2-plot-CNN.py
 ## Simulation 5
 **Table 2.** Finetuning Resnet family models on CIFAR10 dataset.
 ```bash
-python A12-resnet-finetune.py --model="Resnet18" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet18" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet18" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet18" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet18" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet18" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
 
-python A12-resnet-finetune.py --model="Resnet34" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet34" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet34" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet34" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet34" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet34" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
 
-python A12-resnet-finetune.py --model="Resnet50" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet50" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
-python A12-resnet-finetune.py --model="Resnet50" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet50" -FFT --optimizer="FP SGD" --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet50" -FFT --optimizer="Analog SGD" --tau=0.8 --CUDA=${CUDA_IDX} 
+python S5-resnet-finetune.py --model="Resnet50" -FFT --optimizer="TT-v1" --tau=0.8 --CUDA=${CUDA_IDX} 
 ```
 
 ## Simulation 6
