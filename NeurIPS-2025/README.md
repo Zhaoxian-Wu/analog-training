@@ -1,3 +1,6 @@
+# Install
+Since the RL-v2 algorithm has not been integrated into the AIHWKIT now, you need to compile the library by your self. The code is available in the [downstream repo](https://github.com/Zhaoxian-Wu/aihwkit). See the ``TTv3-momentum-H`` branch for RL-v2 implementation and ``feature/customized-response-function`` branch for power/exponential response functions.
+
 # Running
 In the bash following commands, replace the `${CUDA_IDX}` variable with specific GPU index, e.g.
 ```bash
@@ -25,6 +28,12 @@ python S1-mnist-FCN.py --SETTING="Analog SGD" --CUDA=${CUDA_IDX} --tau=0.7
 python S1-mnist-FCN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.5
 python S1-mnist-FCN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.6
 python S1-mnist-FCN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.7
+python S1-mnist-FCN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.5
+python S1-mnist-FCN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.6
+python S1-mnist-FCN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.7
+python S1-mnist-FCN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.5
+python S1-mnist-FCN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.6
+python S1-mnist-FCN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.7
 ```
 Perform simulations on CNN
 ```bash
@@ -35,6 +44,12 @@ python S2-mnist-CNN.py --SETTING="Analog SGD" --CUDA=${CUDA_IDX} --tau=0.8
 python S2-mnist-CNN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.6
 python S2-mnist-CNN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.7
 python S2-mnist-CNN.py --SETTING="TT-v1" --CUDA=${CUDA_IDX} --tau=0.8
+python S2-mnist-CNN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.6
+python S2-mnist-CNN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.7
+python S2-mnist-CNN.py --SETTING="TT-v2" --CUDA=${CUDA_IDX} --tau=0.8
+python S2-mnist-CNN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.6
+python S2-mnist-CNN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.7
+python S2-mnist-CNN.py --SETTING="RL-v2" --CUDA=${CUDA_IDX} --tau=0.8
 ```
 
 ## Simulation 3: Resnet/MobileNet @ CIFAR
@@ -82,7 +97,3 @@ python S3-resnet.py --dataset="CIFAR100" --model="Resnet18" -FFT --optimizer="TT
 python S3-resnet.py --dataset="CIFAR10"  --model="Resnet18" -FFT --optimizer="TT-v1" --TTv1-gamma=0.4 --RPU=Exp  --tau=0.1 --res-gamma=3. --CUDA=${CUDA_IDX}
 python S3-resnet.py --dataset="CIFAR100" --model="Resnet18" -FFT --optimizer="TT-v1" --TTv1-gamma=0.4 --RPU=Exp  --tau=0.1 --res-gamma=3. --CUDA=${CUDA_IDX}
 ```
-
-
-# Note
-The implementation of RLv2 and power/exponential response functions have not been organized well so far since the code need to modify the code in AIHWKIT. Feel free to send me an email if you need any suggestion for reproducing the results.
